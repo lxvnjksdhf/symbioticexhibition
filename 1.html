@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>symbioticexhibition</title>
+		<style type="text/css" href="images/stye.css">
+		*{ 
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Author Variable';
+		}
+		.total{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			transition: 0.5s;
+		}
+		#popup{
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			box-shadow: 0 0px 10px rgba(0,0,0,.0);
+			background: #FFFFFF;
+			display: flex;
+			text-align: center;
+			position: fixed;
+			border-radius: 1rem;
+			width: 21rem;
+			height: 11.7rem;
+			padding: 0.9% 1.3%;
+		}
+		.close{
+			position: absolute;
+			color: #fff;
+			background-color: #000000;
+			padding: 0.5% 3% 1.2% 3%;
+			border-radius: 0.4rem;
+			text-decoration: none;
+			font-size: 1.4rem;
+			margin: 35.4% 33.5%;
+		}
+		.welcome{
+			line-height: 2.15rem;
+			font-size: 1.7rem;
+		}
+		.secondary{
+			position: relative;
+		}
+		.img{
+			filter: blur(0.5rem); /*高斯模糊*/
+		}
+		body{
+			background-size: cover;
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-position: center;
+			cursor: url('/Users/user/Desktop/symbioticexhibition/ticket.ico'),auto;
+		}
+		
+		/*一级疼痛——写字 圆圈及弹窗*/
+		#circle_1{
+			position:fixed;
+            top:528px;
+			left:485px;
+			width: 18px;
+			height: 18px;
+			background-color: #000000;
+			border-radius: 50%;
+			-webkit-animation-name: 'ripple';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+			-webkit-animation-duration: 0.8s;/*动画持续时间*/
+			-webkit-animation-timing-function: ease; /*动画频率，和transition-timing-function是一样的*/
+			-webkit-animation-delay: 0.5s;/*动画延迟时间*/
+			-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+			-webkit-animation-direction: alternate;/*定义动画方式*/
+			opacity: 0.8;
+		}
+		@keyframes ripple {
+		0% {margin-left: 4px;margin-top: 4px;width:10px;height:10px;}
+		100% {margin-left: 0;margin-top: 0;width:18px;height:18px;}
+		}
+		.skill_1{
+			width: 6.25rem;
+			height: 6.25rem;
+		}
+		.skill_1 :hover #first{
+			display: block;
+		}
+		#first{
+			font-size: 15px;
+			border-radius: 0.3rem;
+			border: #000000 0.8px solid;
+			background-color: transparent;
+			width: 8.45rem;
+			height: 20px;
+			position:fixed;
+			top: 553px;
+			left: 428px;
+			display:none;
+			padding: 0.1% 0.1%;
+		}
+		
+		/*二级疼痛——折纸 圆圈及弹窗*/
+		#circle_2{
+			position:fixed;
+		    top:528px;
+			left:658.5px;
+			width: 18px;
+			height: 18px;
+			background-color: #000000;
+			border-radius: 50%;
+			-webkit-animation-name: 'ripple';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+			-webkit-animation-duration: 0.8s;/*动画持续时间*/
+			-webkit-animation-timing-function: ease; /*动画频率，和transition-timing-function是一样的*/
+			-webkit-animation-delay: 0.5s;/*动画延迟时间*/
+			-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+			-webkit-animation-direction: alternate;/*定义动画方式*/
+			opacity: 0.8;
+		}
+		.skill_2{
+			width: 6.25rem;
+			height: 6.25rem;
+		}
+		.skill_2 :hover #first{
+			display: block;
+		}
+		#second{
+			font-size: 15px;
+			border-radius: 0.3rem;
+			border: #000000 0.8px solid;
+			background-color: transparent;
+			width: 10.2rem;
+			height: 20px;
+			position:fixed;
+			top: 553px;
+			left: 583px;
+			display:none;
+			padding: 0.1% 0.1%;
+		}
+		
+		/*三级疼痛——撕纸 圆圈及弹窗*/
+		#circle_3{
+			position:fixed;
+		    top:528px;
+			left:831px;
+			width: 18px;
+			height: 18px;
+			background-color: #000000;
+			border-radius: 50%;
+			-webkit-animation-name: 'ripple';
+			-webkit-animation-duration: 0.8s;
+			-webkit-animation-timing-function: ease; 
+			-webkit-animation-delay: 0.5s;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-direction: alternate;
+			opacity: 0.8;
+		}
+		@keyframes ripple {
+		0% {margin-left: 4px;margin-top: 4px;width:10px;height:10px;}
+		100% {margin-left: 0;margin-top: 0;width:18px;height:18px;}
+		}
+		.skill_3{
+			width: 6.25rem;
+			height: 6.25rem;
+		}
+		.skill_3 :hover #first{
+			display: block;
+		}
+		#third{
+			font-size: 15px;
+			border-radius: 0.3rem;
+			border: #000000 0.8px solid;
+			background-color: transparent;
+			width: 8.45rem;
+			height: 20px;
+			position:fixed;
+			top: 553px;
+			left: 773px;
+			display:none;
+			padding: 0.1% 0.1%;
+		}
+		
+		/*四级疼痛——揉纸 圆圈及弹窗*/
+		#circle_4{
+			position:fixed;
+		    top:528px;
+			left:1004px;
+			width: 18px;
+			height: 18px;
+			background-color: #000000;
+			border-radius: 50%;
+			-webkit-animation-name: 'ripple';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+			-webkit-animation-duration: 0.8s;/*动画持续时间*/
+			-webkit-animation-timing-function: ease; /*动画频率，和transition-timing-function是一样的*/
+			-webkit-animation-delay: 0.5s;/*动画延迟时间*/
+			-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+			-webkit-animation-direction: alternate;/*定义动画方式*/
+			opacity: 0.8;
+		}
+		.skill_4{
+			width: 6.25rem;
+			height: 6.25rem;
+		}
+		.skill_4 :hover #first{
+			display: block;
+		}
+		#four{
+			font-size: 15px;
+			border-radius: 0.3rem;
+			border: #000000 0.8px solid;
+			background-color: transparent;
+			width: 8.9rem;
+			height: 20px;
+			position:fixed;
+			top: 553px;
+			left: 943px;
+			display:none;
+			padding: 0.1% 0.1%;
+		}
+		
+		/*五级疼痛——碎纸机 圆圈及弹窗*/
+		#circle_5{
+			position:fixed;
+		    top:528px;
+			left:1177px;
+			width: 18px;
+			height: 18px;
+			background-color: #000000;
+			border-radius: 50%;
+			-webkit-animation-name: 'ripple';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+			-webkit-animation-duration: 0.8s;/*动画持续时间*/
+			-webkit-animation-timing-function: ease; /*动画频率，和transition-timing-function是一样的*/
+			-webkit-animation-delay: 0.5s;/*动画延迟时间*/
+			-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+			-webkit-animation-direction: alternate;/*定义动画方式*/
+			opacity: 0.8;
+		}
+		.skill_5{
+			width: 6.25rem;
+			height: 6.25rem;
+		}
+		.skill_5 :hover #first{
+			display: block;
+		}
+		#five{
+			font-size: 15px;
+			border-radius: 0.3rem;
+			border: #000000 0.8px solid;
+			background-color: transparent;
+			width: 9.75rem;
+			height: 20px;
+			position:fixed;
+			top: 553px;
+			left: 1110px;
+			display:none;
+			padding: 0.1% 0.1%;
+		}
+		
+		/*前言*/
+		#circle_6{
+			position:fixed;
+		    top:490px;
+			left:232px;
+			width: 18px;
+			height: 18px;
+			background-color: #000000;
+			border-radius: 50%;
+			-webkit-animation-name: 'ripple';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+			-webkit-animation-duration: 0.8s;/*动画持续时间*/
+			-webkit-animation-timing-function: ease; /*动画频率，和transition-timing-function是一样的*/
+			-webkit-animation-delay: 0.5s;/*动画延迟时间*/
+			-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+			-webkit-animation-direction: alternate;/*定义动画方式*/
+			opacity: 0.8;
+		}
+		.skill_6{
+			width: 6.25rem;
+			height: 6.25rem;
+		}
+		.skill_6 :hover #first{
+			display: block;
+		}
+		#introduction{
+			font-size: 15px;
+			border-radius: 0.3rem;
+			border: #000000 1px solid;
+			background-color: transparent;
+			width: 7.28rem;
+			height: 100px;
+			position:fixed;
+			top: 515px;
+			left: 232px;
+			display:none;
+			padding: 0.1% 0.1% 0.1% 0.2%;
+		}
+		
+		/*历史进程*/
+		#circle_7{
+			position:fixed;
+		    top:365px;
+			left:1307px;
+			width: 18px;
+			height: 18px;
+			background-color: #000000;
+			border-radius: 50%;
+			-webkit-animation-name: 'ripple';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+			-webkit-animation-duration: 0.8s;/*动画持续时间*/
+			-webkit-animation-timing-function: ease; /*动画频率，和transition-timing-function是一样的*/
+			-webkit-animation-delay: 0.5s;/*动画延迟时间*/
+			-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+			-webkit-animation-direction: alternate;/*定义动画方式*/
+			opacity: 0.8;
+		}
+		.skill_7{
+			width: 6.25rem;
+			height: 6.25rem;
+		}
+		.skill_7 :hover #first{
+			display: block;
+		}
+		#history{
+			text-align: right;
+			font-size: 15px;
+			border-radius: 0.3rem;
+			border: #000000 1px solid;
+			background-color: transparent;
+			width: 8.28rem;
+			height: 116px;
+			position:fixed;
+			top: 314.8px;
+			left: 1170px;
+			display:none;
+			padding: 0.1% 0.2% 0.1% 0.1%;
+		}
+		
+		/*体验区*/
+		#circle_8{
+			position:fixed;
+		    top:738.5px;
+			left:605.5px;
+			width: 18px;
+			height: 18px;
+			border: 1px solid;
+			background-color: transparent;
+			border-radius: 50%;
+			-webkit-animation-name: 'ripple';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+			-webkit-animation-duration: 0.8s;/*动画持续时间*/
+			-webkit-animation-timing-function: ease; /*动画频率，和transition-timing-function是一样的*/
+			-webkit-animation-delay: 0.5s;/*动画延迟时间*/
+			-webkit-animation-iteration-count: infinite;/*定义循环资料，infinite为无限次*/
+			-webkit-animation-direction: alternate;/*定义动画方式*/
+			opacity: 0.8;
+		}
+		.skill_8{
+			width: 6.25rem;
+			height: 6.25rem;
+		}
+		.skill_8 :hover #first{
+			display: block;
+		}
+		#experience{
+			font-size: 15px;
+			border-radius: 0.3rem;
+			border: #000000 1px solid;
+			background-color: transparent;
+			width: 15.5rem;
+			height: 54px;
+			position:fixed;
+			line-height: 15px;
+			top: 781px;
+			left: 495px;
+			display:none;
+			padding: 0.1% 0.1%;
+			text-align:center;
+		}
+		EMBED{
+			opacity: 0;
+			position: absolute;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="total">
+			<EMBED src="broadcast.mp3" autoplay="autoplay"></EMBED>
+			<div class="secondary" >
+				<div class="img" onclick="toggle()" id="img">
+					<img src="111.png" style="max-width: 100%; height: 100%;">
+					
+					<!--一级疼痛——写字-->
+					<a href="write.html">
+						<div id="skill_1">
+							<div id="circle_1"></div>
+					</a>
+							<input type="text" value="First degree pain-write" id="first">
+						</div>
+						
+					<!--二级疼痛——折纸-->
+					<a href="folding.html">
+						<div id="skill_2">
+							<div id="circle_2"></div>
+					</a>
+							<input type="text" value="Second degree pain-folding" id="second">
+						</div>
+						
+					<!--三级疼痛——撕纸-->
+					<a href="tear.html">
+						<div id="skill_3">
+							<div id="circle_3"></div>
+					</a>
+							<input type="text" value="Third degree pain-tear" id="third">
+						</div>
+						
+					<!--四级疼痛——揉纸-->
+					<a href="rolling.html">
+						<div id="skill_4">
+							<div id="circle_4"></div>
+					</a>
+							<input type="text" value="Four degree pain-rolling" id="four">
+						</div>
+						
+					<!--五级疼痛——碎纸机-->
+					<a href="shredder.html">
+						<div id="skill_5">
+							<div id="circle_5"></div>
+					</a>
+							<input type="text" value="Five degree pain-shredder" id="five">
+						</div>
+					
+					<!--前言-->
+					<a href="introduction.html">
+						<div id="skill_6">
+							<div id="circle_6"></div>
+					</a>
+							<p id="introduction">Introduction<br/>Introduce the relationship and attitude between human and objects in the past.</p>
+						</div>
+					
+					<!--历史进程-->
+					<a href="history.html">
+						<div id="skill_7">
+							<div id="circle_7"></div>
+					</a>
+							<p id="history">Course of History<br/>Introduce the various time points and events in which the relationship between human beings and objects changes.</p>
+						</div>
+					
+					<!--体验区-->
+					<div id="skill_8">
+						<div id="circle_8"></div>
+						<p id="experience">Experience Area <br/>Open every weekday from 14:00 to 16:00. You can experience all levels of pain.</p>
+					</div>
+					
+				</div>
+			</div>
+			<div id="popup">
+				<p class="welcome">Welcome to the exhibition of online object symbiosis, and start your exploration!</p>
+				<a href="#" onclick="toggle()" class="close">Close</a>
+			</div>
+		</div>
+		
+			<script type="text/javascript">
+				/*关闭弹窗*/
+				function toggle(){
+					document.getElementById("popup").remove("popup");
+					document.getElementById("img").style.filter="blur(0rem)"
+				}
+				
+				/*一级疼痛——写字 鼠标移动出现文字*/
+				const target1 = document.getElementById("circle_1")
+				const content1 = document.getElementById("first")
+				target1.addEventListener("mouseover",()=>{
+					content1.style.display = "block"
+				})
+				target1.addEventListener("mouseout",()=>{
+					content1.style.display = "none"
+				})
+			</script>
+			
+			<script type="text/javascript">
+				/*二级疼痛——折纸 鼠标移动出现文字*/
+				const target2 = document.getElementById("circle_2")
+				const content2 = document.getElementById("second")
+				target2.addEventListener("mouseover",()=>{
+					content2.style.display = "block"
+				})
+				target2.addEventListener("mouseout",()=>{
+					content2.style.display = "none"
+				})
+			</script>
+			
+			<script type="text/javascript">
+				/*三级疼痛——撕纸 鼠标移动出现文字*/
+				const target3 = document.getElementById("circle_3")
+				const content3 = document.getElementById("third")
+				target3.addEventListener("mouseover",()=>{
+					content3.style.display = "block"
+				})
+				target3.addEventListener("mouseout",()=>{
+					content3.style.display = "none"
+				})
+			</script>
+			
+			<script type="text/javascript">
+				/*四级疼痛——揉纸 鼠标移动出现文字*/
+				const target4 = document.getElementById("circle_4")
+				const content4 = document.getElementById("four")
+				target4.addEventListener("mouseover",()=>{
+					content4.style.display = "block"
+				})
+				target4.addEventListener("mouseout",()=>{
+					content4.style.display = "none"
+				})
+			</script>
+			
+			<script type="text/javascript">
+				/*五级疼痛——碎纸机 鼠标移动出现文字*/
+				const target5 = document.getElementById("circle_5")
+				const content5 = document.getElementById("five")
+				target5.addEventListener("mouseover",()=>{
+					content5.style.display = "block"
+				})
+				target5.addEventListener("mouseout",()=>{
+					content5.style.display = "none"
+				})
+			</script>
+			
+			<script type="text/javascript">
+				/*前言*/
+				const target6 = document.getElementById("circle_6")
+				const content6 = document.getElementById("introduction")
+				target6.addEventListener("mouseover",()=>{
+					content6.style.display = "block"
+				})
+				target6.addEventListener("mouseout",()=>{
+					content6.style.display = "none"
+				})
+			</script>
+			
+			<script type="text/javascript">
+				/*历史进程*/
+				const target7 = document.getElementById("circle_7")
+				const content7 = document.getElementById("history")
+				target7.addEventListener("mouseover",()=>{
+					content7.style.display = "block"
+				})
+				target7.addEventListener("mouseout",()=>{
+					content7.style.display = "none"
+				})
+			</script>
+			
+			<script type="text/javascript">
+				/*体验区*/
+				const target8 = document.getElementById("circle_8")
+				const content8 = document.getElementById("experience")
+				target8.addEventListener("mouseover",()=>{
+					content8.style.display = "block"
+				})
+				target8.addEventListener("mouseout",()=>{
+					content8.style.display = "none"
+				})
+			</script>
+			
+	</body>
+</html>
